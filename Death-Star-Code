@@ -1,0 +1,27 @@
+
+// Protopaja 2022
+// Group 4: SAAB Finland
+// Handheld Microwave Transmitter; "The Death Star"
+
+
+  int antennaPin = 25;
+  int buttonIn =  32;
+  int buttonOut = 35;
+  
+void setup() {
+  
+  pinMode(antennaPin, OUTPUT);
+  pinMode(buttonIn, OUTPUT);
+  pinMode(buttonOut, INPUT);
+}
+
+void loop() {
+  
+  digitalWrite(buttonIn, HIGH);
+  
+  if (digitalRead(buttonOut)== 1) {
+    digitalWrite(antennaPin, HIGH);
+  }
+  else digitalWrite(antennaPin, LOW);
+
+}
