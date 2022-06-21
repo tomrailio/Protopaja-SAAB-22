@@ -1,0 +1,114 @@
+
+
+Reference > Libraries > Wifi
+WiFi
+Communication
+
+Enables network connection (local and Internet) using the Arduino WiFi shield.
+With this library you can instantiate Servers, Clients and send/receive UDP packets 
+through WiFi. The shield can connect either to open or encrypted networks (WEP, WPA). 
+The IP address can be assigned statically or through a DHCP. The library can also manage DNS.
+
+Go to repository
+
+Note: this library was retired and is no longer maintained !!!!!!!!!!!!!!!!!!!!!
+
+Compatibility
+This library is compatible with all architectures so you should be able to use it on all the Arduino boards.
+
+Releases
+To use this library, open the Library Manager in the Arduino IDE and install it from there.
+
+1.2.7 (latest)
+1.2.6
+1.2.5
+1.2.4
+1.2.3
+1.2.2
+1.2.1
+1.2.0
+Usage
+The firmware for the WiFi shield has changed in Arduino IDE 1.0.5. You are recommended to install 
+this update per these instructions
+
+With the Arduino WiFi Shield, this library allows an Arduino board to connect to the internet. 
+It can serve as either a server accepting incoming connections or a client making outgoing ones. 
+The library supports WEP and WPA2 Personal encryption, but not WPA2 Enterprise. Also note, 
+if the SSID is not broadcast, the shield cannot connect.
+
+Arduino communicates with the WiFi shield using the SPI bus. This is on digital pins 11, 12, and 13 
+on the Uno and pins 50, 51, and 52 on the Mega. On both boards, pin 10 is used as SS. On the Mega, 
+the hardware SS pin, 53, is not used but it must be kept as an output or the SPI interface won’t work. 
+Digital pin 7 is used as a handshake pin between the Wifi shield and the Arduino, and should not be used.
+
+The WiFi library is very similar to the Ethernet library, and many of the function calls are the same.
+
+For additional information on the WiFi shield, see the Getting Started page and the WiFi shield hardware page.
+
+To use this library:
+
+#include <WiFi.h>
+
+Examples
+
+ConnectNoEncryption : Demonstrates how to connect to an open network
+ConnectWithWEP : Demonstrates how to connect to a network that is encrypted with WEP
+ConnectWithWPA : Demonstrates how to connect to a network that is encrypted with WPA2 Personal
+ScanNetworks : Displays all WiFi networks in range
+WiFiChatServer : Set up a simple chat server
+WiFiWebClient : Connect to a remote webserver
+WiFiWebClientRepeating : Make repeated HTTP calls to a webserver
+WiFiWebServer : Serve a webpage from the WiFi shield
+WiFiSendReceiveUDPString : Send and receive a UDP string
+UdpNTPClient : Query a Network Time Protocol (NTP) server using UDP
+Wifi Class
+WiFi.begin()
+WiFi.disconnect()
+WiFi.config()
+WiFi.setDNS()
+WiFi.SSID()
+WiFi.BSSID()
+WiFi.RSSI()
+WiFi.encryptionType()
+WiFi.scanNetworks()
+WiFi.status()
+WiFi.getSocket()
+WiFi.macAddress()
+IPAddress class
+IPAddress.localIP()
+IPAddress.subnetMask()
+IPAddress.gatewayIP()
+Server class
+Server
+WiFiServer()
+server.begin()
+server.available()
+server.write()
+server.print()
+server.println()
+Client class
+Client()
+WiFiClient()
+client.connected()
+client.connect()
+client.write()
+client.print()
+client.println()
+client.available()
+client.read()
+client.flush()
+client.stop()
+UDP class
+WiFiUDP
+WiFiUDP.begin()
+WiFiUDP.available()
+WiFiUDP.beginPacket()
+WiFiUDP.endPacket()
+WiFiUDP.write()
+WiFiUDP.parsePacket()
+WiFiUDP.peek()
+WiFiUDP.read()
+WiFiUDP.flush()
+WiFiUDP.stop()
+WiFiUDP.remoteIP()
+WiFiUDP.remotePort()
