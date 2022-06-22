@@ -1,0 +1,8 @@
+
+
+ 
+// Unlike TCP sockets connection between the server and its clients, or webSockets upon HTTP, we do not require ACK.
+
+
+ 
+
