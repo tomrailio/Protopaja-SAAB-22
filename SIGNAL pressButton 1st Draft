@@ -4,7 +4,7 @@
 #include <WiFi101.h>     (This at least seems to be relevant ATM). 
 #include <Encoder.h>
 #include <Button.h>
-// #include "config.h"     // Discuss this open! 
+// #include "config.h"     // Discuss this open!  Propably no credentials needed, so is this relevant otherwise?
 
 // TODO's below: 
 // Unlike TCP sockets connection between the server and its clients, or webSockets upon HTTP, we do not require ACK.
