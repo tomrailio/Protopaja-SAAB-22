@@ -385,3 +385,48 @@ translates the digital pin number to the interrupt number. For example, on the U
 This command doesn’t work on the 101, though, since it’s not needed on that controller.
 
 
+
+// SNIPPET 6. Ideas to "CONNECT"  .... SIGNAL pressButton. JS toteutusta. 
+
+
+The readButtons() function’s changes are similar to those for the readEncoder() function. When the connectButton changes, you’ll replace the TCP socket check with the webSocket check, and call connectToServer() if you’re not connected. If you are connected, you’ll send the exit message so the server can disconnect you.
+
+When the play button changes, check the webSocket connection and send the playing state if you have a connection.
+
+void readButtons() {
+  if (connectButton.toggled()) {         // if the connect button has changed
+    if (connectButton.read() == LOW) {   // and it's LOW
+      if (!webSocket.connected()) {       // if you're not connected,
+        connectToServer();               // connect to server
+      } else {                          // if you're already connected,
+        sendJsonMessage("exit", 1);       // disconnect
+      }
+    }
+  }                                     // end of connectButton.toggled
+  
+  if (playButton.toggled()) {             // if the play button has changed
+    if (playButton.read() == LOW) {        // and it's LOW
+      playing = !playing;                  // toggle playing state
+      if (webSocket.connected()) {         // if you're connected, 
+        sendJsonMessage("playing", playing); // send a message
+      }
+    }
+  }                                     // end of playButton.toggled
+}                                       // end of readButtons()
+The connectToServer() function attempts to connect just like the previous one. However, webSocket.begin() returns an error 1 if it fails to connect, so the logic is reversed from the previous code. This version also sends the client name by way of greeting to the server, using the sendJsonMessage() function that you’ll see next.
+
+void connectToServer() {
+  Serial.println("attempting to connect");
+  boolean error = webSocket.begin();   // attempt to connect
+  if (error) {
+    Serial.println("failed to connect");
+  } else {
+    Serial.println("connected");
+    sendJsonMessage("", 0);  // send the client name and nothing else
+  }
+}
+
+
+
+// SNIPPET 7. 
+
