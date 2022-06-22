@@ -1,6 +1,67 @@
 
+// This feature enables signal sending when pressed. 
 
-This feature enables signal sending when pressed. 
+// the following snippets are to be further tested with the VNA. 
 
+
+// SNIPPET 1. From Stack Overflow. 
+
+// The only error is related to Online IDE, which does not have the <iostream> included. 
+// main.c:1:10: fatal error:  iostream: No such file or directory
+//    1 | #include <iostream>
+//    |          ^~~~~~~~~~  compilation terminated.
+
+#include <iostream>
+#include <functional>
+
+using namespace std::placeholders;
+
+
+class GenericButton
+{
+public:
+    typedef std::function<void()> fPtr;
+    GenericButton() : funcitonToCall(nullptr) {}
+    void setTarget(fPtr target) {
+        funcitonToCall = target;
+    }
+
+    void pressButton() {
+        if (funcitonToCall) funcitonToCall();
+    }
+
+private:
+    fPtr funcitonToCall;
+};
+
+struct foo {
+    void doSomething() const {
+        std::cout << "doing something in a foo..." << std::endl;
+    }
+
+    static void alternative(int i) {
+        std::cout << "And another, i=" << i << "\n";
+    }
+};
+
+void doSomethingElse() {
+    std::cout << "doing something else..." << std::endl;
+}
+
+int main() {
+    GenericButton myButton;
+    foo f;
+    myButton.setTarget(std::bind(&foo::doSomething, &f));
+    myButton.pressButton();
+    myButton.setTarget(doSomethingElse);
+    myButton.pressButton();
+    myButton.setTarget(std::bind(foo::alternative, 666));
+    myButton.pressButton();
+    myButton.setTarget([](){ std::cout << "Lambda!\n"; });
+    myButton.pressButton();
+}
+
+
+// SNIPPET 2. From   
 
 
