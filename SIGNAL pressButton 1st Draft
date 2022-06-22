@@ -2,6 +2,7 @@
 
 #include <SPI.h>
 #include <WiFi101.h>     (This at least seems to be relevant ATM). 
+// or ... #include <WiFiNINA.h>
 #include <Encoder.h>
 #include <Button.h>
 // #include "config.h"     // Discuss this open!  Propably no credentials needed, so is this relevant otherwise?
