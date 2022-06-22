@@ -195,10 +195,19 @@ Try sending the messages as described previously: playing, position, and exit. S
 the server to close the connection to the client.
 
 Once you understand the server, it’s time to make a microcontroller-based client to connect to it.
+However, our Use Case needs (for the time being) a single one-way communication as no ACK is required!
+VNA is used to measure, that the SIGNAL pressButton function does the job. 
 
 
 
-Snippet 4.)
+Snippet 4.) Investigate which of the below libraries are being needed, 
+
+// include required libraries and config files
+#include <SPI.h>
+#include <WiFi101.h>     (This at least seems to be relevant ATM). 
+#include <Encoder.h>
+#include <Button.h>
+#include "config.h"     
 
 
 
