@@ -12,8 +12,9 @@
 // Evaluate how the button library and button methods are implemented within the Arduino setting. 
 
  while ( WiFi.status() != WL_CONNECTED) {
-     delay(2000);                             // try to connect
-  }
+     WiFi.begin                              // try to connect
+     delay(2000);  
+ }
   
   
 
