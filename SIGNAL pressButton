@@ -62,6 +62,31 @@ int main() {
 }
 
 
-// SNIPPET 2. From   
+// SNIPPET 2. From Stack Overflow == PSEUDOKOODIA !
+
+
+Using asynchronous code or idle handlers should be the first option, and a worker 
+thread is another (but please only add threads when you know that you actually need them). 
+It's also possible to "pump" the event loop manually but that should really be 
+the last option. See main loop reference for details.
+
+Your example would look something like this:
+
+gboolean check_connection (gpointer user_data)
+{
+    /* g_print what you want based on check value */
+
+    if (check == 0)
+        return FALSE;
+    return TRUE;
+}
+
+void button1_clicked_do_job(GtkWidget *widget, gpointer data1)
+{
+     g_timeout_add_seconds (2, check_connection, NULL);
+}
+
+
+// SNIPPET 3. From Stack Overflow  
 
 
