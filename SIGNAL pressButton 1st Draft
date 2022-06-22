@@ -10,9 +10,20 @@
 // Unlike TCP sockets connection between the server and its clients, or webSockets upon HTTP, we do not require ACK.
 // VNA verifies the 1-sided connection and is enough ==?
 // Evaluate how the button library and button methods are implemented within the Arduino setting. 
+// Rename SIGNAL pressButton as connectButton ==?  ....and is there need for a second button like playButton ...
+// ... since we only need the connection opened up somehow or z... extra functionalities too ==?
+
+void setup() {
+  Serial.begin(9600);              // initialize serial communication
+  pinMode(0, INPUT_PULLUP);        // initialize encoder pins
+  pinMode(1, INPUT_PULLUP);
+  pinMode(connectLED, OUTPUT);     // initialize LED pins
+  pinMode(playLED, OUTPUT);
+  connectButton.begin();           // initialize buttons
+  playButton.begin();
 
  while ( WiFi.status() != WL_CONNECTED) {
-     WiFi.begin                              // try to connect
+     WiFi.begin                    // try to connect
      delay(2000);  
  }
   
