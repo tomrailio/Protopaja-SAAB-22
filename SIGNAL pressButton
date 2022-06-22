@@ -211,3 +211,177 @@ Snippet 4.) Investigate which of the below libraries are being needed,
 
 
 
+
+
+// SNIPPET 5.  from the chapter 5. On line book. 
+
+
+Set up global variables to hold the server address (your personal computer’s address, where the server runs) and make 
+an instance of the WiFiClient library. This is how you’ll create a TCP socket connection to the server, and read from and write to the server.
+
+const char serverAddress[] = "192.168.0.12"; // server address
+Change this to match your server”s IP address
+int port = 8080;                              // port number
+WiFiClient tcpSocket;                         // server socket
+  
+Then make instances of the Encoder and Button libraries to read the encoder and buttons. Set up constants for 
+the LED pin numbers to make them easier to remember as well. Finally, you need a Boolean variable to track the 
+playing state, and a long integer to hold the last read encoder position.
+
+    Encoder myEncoder(0, 1);         // instance of the encoder library
+    Button playButton(2);            // instances of the button library
+    Button connectButton(3);
+    const int playLED = 4;           // pin numbers for the LEDs
+    const int connectLED = 5;
+  
+    boolean playing = false;         // what the video state should be
+    long lastPosition  = 0;          // last read position of the encoder
+
+The setup() function sets the states of the I/O pins and starts the button instances.  !!!!!
+
+Notice that the pinMode for 
+the encoder pins is INPUT_PULLUP. This tells the microcontroller that you want to use the internal pullup 
+resistors on these pins.
+
+Once the pins are initialized, you’ll connect to your WiFi network, just like you did in the sketches in Chapter 4.
+
+void setup() {
+  Serial.begin(9600);             // initialize serial communication
+  pinMode(0, INPUT_PULLUP);       // initialize encoder pins
+  pinMode(1, INPUT_PULLUP);
+  pinMode(connectLED, OUTPUT);    // initialize LED pins
+  pinMode(playLED, OUTPUT);
+  connectButton.begin();           // initialize buttons
+  playButton.begin();
+  
+  // while you're not connected to a WiFi AP,
+  while ( WiFi.status() != WL_CONNECTED) {
+    Serial.print("Attempting to connect to Network named: ");
+    Serial.println(ssid);           // print the network name (SSID)
+    WiFi.begin(ssid, password);     // try to connect
+    delay(2000);
+  }
+  
+  // When you're connected, print out the device's network status:
+  IPAddress ip = WiFi.localIP();
+  Serial.print("IP Address: ");
+  Serial.println(ip);
+}
+The Encoder library relies on the interrupt function of the microcontroller to read the encoder pins. 
+Hardware interrupts allow the controller to interrupt whatever is going on in the code when a given input 
+pin changes. If interrupts interfere with the communication between the main processor on the MKR1000 and 
+the WiFi radio, you can turn off the use of interrupts by using the #define ENCODER_DO_NOT_USE_INTERRUPTS 
+directive before you include the library.
+
+Begin the loop() function by calling two new functions, readEncoder() and readButtons(), which you’ll write 
+shortly. These will do what their names imply. Then check to see if there’s a socket connection to the server, 
+and if so, check if there’s any data available to be read from the server. If there is, read it and print it out 
+to the Serial Monitor.
+
+Finally, update the status LEDs. The Connect LED depends on whether there’s a socket connection, so you can use 
+the value returned by the tcpSocket.connected() function, which returns 1 or 0 for true or false. Likewise, 
+you can turn on or off the Playing LED using the playing variable, which you’ll set to true or false as well.
+
+void loop() {
+  // read the sensors:
+  readEncoder();
+  readButtons();
+  
+  // check for incoming data from the server:
+  if (tcpSocket.connected()) {    // if connected to the server,
+    if (tcpSocket.available()) {  // if there is a response from the server,
+      String result = tcpSocket.readString();  // read it
+      Serial.print(result);       // and print it (for diagnostics only)
+    }
+  }
+  // update the status LEDs:
+  digitalWrite(connectLED, tcpSocket.connected());
+  digitalWrite(playLED, playing);
+}
+Start the readEncoder() function by calling myEncoder.read(). It will return the number of steps the encoder’s 
+taken. Positive values indicate clockwise movement and negative values indicate counterclockwise movement. 
+Compare the position to the last position read, and if there’s a socket connection to the server open, send 
+the difference to the server. Then save the current position for comparison next time you read.
+
+void readEncoder() {
+  long position = myEncoder.read();       // read the encoder
+  long difference = position - lastPosition;  // compare to last position
+  if (difference != 0) {                  // if it's changed,
+    if (tcpSocket.connected()) {          // if the socket's connected,
+      tcpSocket.print("position:");        // send the key
+      tcpSocket.println(difference);       // send the value
+    }
+    lastPosition = position;              // update lastPosition
+  }
+}
+  
+Start the readButtons() function by checking if the Connect button is toggled (changed), and if so, read it to see if it’s pressed. 
+If so, and there’s no socket connection to the server, attempt to connect. If you’re connected, send exit:1 and the server will disconnect.
+
+By determining if .toggled() is true and the button is low, you ensure that you’re only taking action when the button changes 
+state. If you only checked if it was pressed, you’d take action repeatedly as long as it’s held down.
+
+void readButtons() {
+  if (connectButton.toggled()) {          // if connect button has changed
+    if (connectButton.read() == LOW) {    // and it's pressed
+      if (!tcpSocket.connected()) {       // if you're not connected,
+        connectToServer();                // connect to server
+      } else {                           // if you're already connected,
+        tcpSocket.println("exit:1");       // disconnect
+      }
+    }
+  }                                       // end of connectButton.toggled
+  
+Finish the readButtons() function by checking the Play button. Check both toggled and pressed conditions just like you did 
+with the Connect button. If its state has changed, change the variable playing to its opposite, and if there’s a socket 
+connection to the server, send a message with the current state of this variable.
+
+  if (playButton.toggled()) {             // if the play button has changed
+    if (playButton.read() == LOW) {       // and it's LOW
+      playing = !playing;                 // toggle playing state
+      if (tcpSocket.connected()) {        // if you're connected,
+        tcpSocket.print("playing:");       // send the key
+        tcpSocket.println(playing);        // send the value
+      }
+    }
+  }                                       // end of playButton.toggled
+}                                         // end of readButtons()
+
+Finally, you need the connectToServer() function that’s called in the first half of readButtons(). 
+This calls the .connect() function from the WiFiClient library to attempt a connection to the server. 
+This is a blocking function, meaning that it stops your whole program until a connection is made. 
+You’ll probably notice a delay between when you press the button and when the Serial Monitor reports the result.
+
+void connectToServer() {
+  Serial.println("attempting to connect");
+  // attempt to connect to the server on the given port:
+  if (tcpSocket.connect(serverAddress, port)) {
+    Serial.println("connected");
+  } else {
+    Serial.println("failed to connect");
+  }
+}
+Upload the client code to the microcontroller, then run the Processing chat server that you wrote previously. 
+Open the Serial Monitor so you can see the status messages. Once your controller’s connected to WiFi, press 
+the Connect button, and you should see it connect to the server. Click the Play button or turn the encoder, 
+and you should see the messages come through in Processing’s console pane. If you type in the Processing 
+sketch window and hit the Enter key, the message should show up in the Arduino Serial Monitor as well.
+Congratulations, you’ve got a working client!
+
+Send a few messages to the server by triggering the encoder and the buttons to get a sense how both 
+the server and the controller client device work. Once you’re comfortable, it’s time to add video to the server application.
+X
+
+
+HARDWARE INTERRUPTS
+
+Hardware interrupts allow a microcontroller to interrupt whatever is going on in the code when a given input pin changes. 
+The interrupt function in this library’s examples (called an interrupt service routine or ISR) is internal to 
+the Encoder library. You can read more about them on the Arduino reference site at www.arduino.cc/en/Reference/AttachInterrupt. 
+The hardware interrupt pin numbers vary from processor to processor. The ATMega328 processor on the Uno has two interrupts,
+numbered 0 and 1, attached to digital pins 2 and 3, respectively. On the 101 all the digital pins can be used as interrupts. 
+On the MKR1000, pins 0, 1, 4, 5, 6, 7, 8, 9, A1, and A2 are interrupts. The digitalPinToInterrupt(pin) function 
+translates the digital pin number to the interrupt number. For example, on the Uno, digitalPinToInterrupt(3) returns 1. 
+This command doesn’t work on the 101, though, since it’s not needed on that controller.
+
+
