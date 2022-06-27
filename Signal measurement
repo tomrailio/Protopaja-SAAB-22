@@ -1,6 +1,6 @@
 
 
-// This file describes the method, for measuring our signal.
+// Measurement of microwave signal.
 
 
 Introduction
@@ -10,8 +10,23 @@ Our project has two parts: ironside and software side. The microwave transmitter
 modulates the signal wave and programme that enables the signal aiming with a pressbutton.
 
 We expect to have a fully working microwave transmitter, which can transmit waves with 
-a determined frequency of 2-10 GHz with the power of under 20 dBm EIRP. The device should be 
+a determined frequency within the 2-10 GHz range with the power of under 20 dBm EIRP. The device should be 
 handheld and capable of transmitting the waves to one selected direction. The transmitter is 
 made to be used as a testing tool for the Sirius radar system and the final prototype is 
 expected to be compatible with Sirius. 
+
+The receiver is a black-box in the sense, that we do not know how it has been configured. 
+At this stage, we do not know, if receiver uses an amplifier to amplify the signal from the
+microwave transmitter. The schematics and board layout of the receiver is unknown. 
+
+(TBD: The determination of amplitude and modulation seems irrelevant. Hence, Oscilloscope trace
+is not being monitored). 
+
+
+
+
+
+
+
+
 
