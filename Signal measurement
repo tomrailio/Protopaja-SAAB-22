@@ -2,3 +2,16 @@
 
 // This file describes the method, for measuring our signal.
 
+
+Introduction
+
+In this project, we aim to communicate with the SAAB Sirius receiver (RX) with microwaves. 
+Our project has two parts: ironside and software side. The microwave transmitter (TX), which
+modulates the signal wave and programme that enables the signal aiming with a pressbutton.
+
+We expect to have a fully working microwave transmitter, which can transmit waves with 
+a determined frequency of 2-10 GHz with the power of under 20 dBm EIRP. The device should be 
+handheld and capable of transmitting the waves to one selected direction. The transmitter is 
+made to be used as a testing tool for the Sirius radar system and the final prototype is 
+expected to be compatible with Sirius. 
+
