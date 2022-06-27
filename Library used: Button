@@ -1,0 +1,53 @@
+
+https://github.com/madleech/Button
+
+
+
+Documentation
+
+Button(int pin) Creates a new Button.
+
+void begin() Call this in your setup method to setup the button. All it does is set the correct pin mode.
+
+bool pressed() Returns true when and only when the button is pressed. Until the button is released (in the 
+debounced-sense of the word) this function won't return true again. So in effect, it returns true only 
+while you are pressing the button, or to put it another way, it fires on a rising edge.
+
+bool released() Like pressed(), but round the other way. So if you hold down a button, and then 
+release it... that is when it fires.
+
+bool toggled() Returns true whenever the button is pressed or released, i.e., its position is 
+toggled. To find out what the position actually is, you can use the read() function.
+
+bool read() Returns the current debounced state of the button, i.e. Button::PRESSED or Button::RELEASED.
+
+bool has_changed() Returns whether the position/state of the button has changed after calling the previous 
+read() function. Unlikely to be used except by Super Gurus.
+
+Quirks and Things to Keep in Mind
+Highs and lows, lows and highs The easiest way to connect a switch on an Arduino is to connect it between 
+an input pin and ground, and use the internal pullup resistor to make sure it doesn't float. This is fine 
+and dandy, but it can get a bit confusing, as a "pressed" button is logic level: low, while a "released" 
+button is logic level: high.
+
+So to make it a bit more obvious what you're talking about, you can use a couple of handy 
+shortcuts: Button::PRESSED and Button::RELEASED which map to the expected values.
+
+License
+Copyright (c) 2016 Michael D K Adams. http://www.michael.net.nz/
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and 
+associated documentation files (the "Software"), to deal in the Software without restriction, 
+including without limitation the rights to use, copy, modify, merge, publish, distribute, 
+sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial 
+portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT 
+NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
