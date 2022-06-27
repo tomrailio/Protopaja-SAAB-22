@@ -3,7 +3,7 @@
 // Handheld Microwave Transmitter; "The Death Star"
 // Arduino SNIPPET consisting of some irrelevant features, which will be removed soonish. 
 
-#include <WiFiNINA.h>
+#include <WiFi.h>
 
 ///////please enter your sensitive data in the Secret tab/arduino_secrets.h
 char ssid[] = "";        // your network SSID (name)
