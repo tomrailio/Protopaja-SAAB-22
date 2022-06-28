@@ -1,4 +1,6 @@
 
 
-#include <WiFi.h>
+#include <WiFi.h>   // This library is automatically “installed” when you install the ESP32 add-on in your Arduino IDE.
+
+
 
