@@ -2,5 +2,14 @@
 
 #include <WiFi.h>   // This library is automatically “installed” when you install the ESP32 add-on in your Arduino IDE.
 
+/*
+ESP32 Wi-Fi Modes
+The ESP32 board can act as Wi-Fi Station, Access Point or both. 
+To set the Wi-Fi mode, use WiFi.mode() and set the desired mode as argument:
 
+WiFi.mode(WIFI_STA)	station mode: the ESP32 connects to an access point
+WiFi.mode(WIFI_AP)	access point mode: stations can connect to the ESP32
+WiFi.mode(WIFI_STA_AP)	access point and a station connected to another access point
+
+*/
 
