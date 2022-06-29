@@ -8,10 +8,9 @@
 // #include "config.h"     // Discuss this open!  Propably no credentials needed, so is this relevant otherwise?
 
 // TODO's below: 
-// Unlike TCP sockets connection between the server and its clients, or webSockets upon HTTP, we do not require ACK.
-// VNA verifies the 1-sided connection and is enough ==?
-// Evaluate how the button library and button methods are implemented within the Arduino setting. 
-// Rename SIGNAL pressButton as connectButton ==?  ....and is there need for a second button like playButton ...
+// Unlike TCP sockets connection between the server and its clients, or webSockets upon HTTP, we do not require ACK,
+   but we still need to have some sort of valid verification method.
+// Is there need for a second button like playButton ...
 // ... since we only need the connection opened up somehow or z... extra functionalities too ==?
 
 void setup() {
