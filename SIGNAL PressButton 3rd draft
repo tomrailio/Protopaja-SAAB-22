@@ -1,6 +1,4 @@
 
-// include required libraries and config files
-
 #include <WiFi101.h>               (This at least seems to be relevant ATM). 
 // or ... #include <WiFiNINA.h>
 // #include <Button.h>             // We dont really need to import a zip file library into the Arduino for a 
