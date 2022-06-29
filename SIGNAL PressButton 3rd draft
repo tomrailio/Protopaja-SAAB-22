@@ -24,7 +24,7 @@
 // Unlike TCP sockets connection between the server and its clients, or webSockets upon HTTP, we do not require ACK,
    but we still need to have some sort of valid verification method.
   
-void setup() {
+void setup() {                     // This is pseudocode for the time being...
   Serial.begin(9600);              // initialize serial communication
   pinMode(0, INPUT_PULLUP);        // initialize encoder pins
   pinMode(1, INPUT_PULLUP);
