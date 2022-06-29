@@ -31,7 +31,7 @@ void setup() {
   playButton.begin();
 
  while ( WiFi.status() != WL_CONNECTED) {
-     WiFi.begin                    // try to connect
+     WiFi.begin                    // try to connect, if ACK returned from RX. 
      delay(2000);                  // We stay inside the loop, until being connected.
  }
   
