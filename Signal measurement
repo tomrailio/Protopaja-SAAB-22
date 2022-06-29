@@ -19,8 +19,8 @@ The receiver is a black-box in the sense, that we do not know how it has been co
 At this stage, we do not know, if receiver uses an amplifier to amplify the signal from the
 microwave transmitter. The schematics and board layout of the receiver is unknown. 
 
-(TBD: The determination of amplitude and modulation seems irrelevant. Hence, Oscilloscope trace
-is not being monitored). 
+The determination of amplitude and modulation seems irrelevant. Hence, Oscilloscope trace
+is not being monitored, but Spectrum Analyzer will be used.  
 
 
 
