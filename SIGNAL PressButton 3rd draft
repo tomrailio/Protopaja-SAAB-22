@@ -3,7 +3,7 @@
                                    This library is compatible with all architectures so you should be able to use it on all the Arduino boards.
 // #include <Button.h>             // We dont really need to import a zip file library into the Arduino for a 
                                    single button, as it can be implemented easily. Toggle button is another question.                        
-// #include <SPI.h>                This one needs more investigation still.....
+// #include <SPI.h>                This seems irrelevant ATM for our Use Case. 
 #include <Encoder.h>               This one needs more investigation still.....
 // #include "config.h"             // Discuss this open!  Propably no credentials needed, so this is irrelevant otherwise?
 
