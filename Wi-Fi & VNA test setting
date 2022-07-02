@@ -1,5 +1,7 @@
 
 
+// This snippet serves only as a tester, that the Arduino IDE runs with the ESP32 and allows some easy
+// modifications when the directional antenna has been integrated. 
 // #include <WiFi.h>   // This library is automatically “installed” when you install the ESP32 add-on in your Arduino IDE.
 
 /*
