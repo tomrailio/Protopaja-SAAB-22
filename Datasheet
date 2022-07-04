@@ -1,8 +1,16 @@
 
+1. OVERVIEW 
+
 This document provides the specifications of SAAB microwave transmitter, which can transmit 
 waves with a determined frequency of 2-10 GHz with the power of under 20 dBm EIRP.
+ 
+1.1. Featured Solution
+
 This handheld device is capable of transmitting the waves to one selected direction. 
 The transmitter is a testing tool for the SAAB Sirius radar system and the final prototype 
-is compatible with Sirius. 
+is compatible with Sirius. The transmitter is designed for rough Arctic environment, taking
+advantage of ESP32 low-duty cycle used to minimize the amount energy that the chip expends.
+
+
 
 
