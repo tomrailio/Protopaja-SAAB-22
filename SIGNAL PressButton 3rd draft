@@ -33,7 +33,7 @@ void setup() {                     // This is pseudocode for the time being...
   playButton.begin();
 
  while ( WiFi.status() != WL_CONNECTED) {
-     WiFi.begin                    // try to connect, if ACK returned from RX. 
+     WiFi.begin                    // try to connect, if ACK returned from RX. --> NOT required!
      delay(2000);                  // We stay inside the loop, until being connected.
  }
   
