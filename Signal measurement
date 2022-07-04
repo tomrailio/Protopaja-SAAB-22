@@ -7,7 +7,7 @@ Introduction
 
 In this project, we aim to communicate with the SAAB Sirius receiver (RX) with microwaves. 
 Our project has two parts: ironside and software side. The microwave transmitter (TX), which
-modulates the signal wave and programme that enables the signal aiming with a pressbutton.
+modulates the sine signal wave and programme that enables the signal aiming with a pressbutton.
 
 We expect to have a fully working microwave transmitter, which can transmit waves with 
 a determined frequency within the 2-10 GHz range with the power of under 20 dBm EIRP. The device should be 
@@ -19,8 +19,16 @@ The receiver is a black-box in the sense, that we do not know how it has been co
 At this stage, we do not know, if receiver uses an amplifier to amplify the signal from the
 microwave transmitter. The schematics and board layout of the receiver is unknown. 
 
-The determination of amplitude and modulation seems irrelevant. Hence, Oscilloscope trace
-is not being monitored, but Spectrum Analyzer will be used.  
+The determination of amplitude and modulation seems worthwhile to evaluate a bit further. Oscilloscope 
+can be used also for frequency stability, bandwidth, output power stability, power consumption
+and bus analyses. Spectrum Analyzer will be used to measure the power as a function of frequency.
+Detector (powermeter) helps us to monitor when rf power is transformed into voltage. These measurements
+enable us to also verify the transmission, as we are not monitoring any ACKs. 
+
+The synthesis of measurement results will be integrated into the Datasheet, when completed. 
+
+
+
 
 
 
