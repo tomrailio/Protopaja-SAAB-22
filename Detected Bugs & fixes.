@@ -2,5 +2,4 @@
 
 This file lists all the detected bugs we have found out during the development process and some solutions to fix them:
 
-1.). 
-
+1.)  Sine wave applied, no need for wifi library. 
