@@ -13,11 +13,11 @@ Technical Specifications:
 
 Non-functional requirements:
 
-  * Usability.
+  * Ergonomics (UX/Usability).
 
   * Reliability.
 
   * Performance.
 
-  * Security.
+  
   
