@@ -11,6 +11,22 @@ The transmitter is a testing tool for the SAAB Sirius radar system and the final
 is compatible with Sirius. The transmitter is designed for rough Arctic environment, taking
 advantage of ESP32 low-duty cycle used to minimize the amount of energy that the chip expends.
 
+XX. Functional Block Diagram
 
+XX. Pin Definitions and Layout
 
+XX. Power Scheme Diagram
 
+ESP32’s digital pins are divided into three different power domains:
+• VDD3P3_RTC
+• VDD3P3_CPU
+• VDD_SDIO
+VDD3P3_RTC is also the input power supply for RTC and CPU.
+VDD3P3_CPU is also the input power supply for CPU.
+VDD_SDIO connects to the output of an internal LDO whose input is VDD3P3_RTC. 
+When VDD_SDIO is connected to the same PCB net together with VDD3P3_RTC, the internal 
+LDO is disabled automatically. The power scheme diagram is shown below:
+  
+- SDIO Domain
+- RTC Domain
+- CPU Domain
