@@ -23,7 +23,7 @@ The determination of amplitude and modulation seems worthwhile to evaluate a bit
 can be used also for frequency stability, bandwidth, output power stability, power consumption
 and bus analyses. Spectrum Analyzer will be used to measure the power as a function of frequency.
 Detector (powermeter) helps us to monitor when rf power is transformed into voltage. These measurements
-enable us to also verify the transmission, as we are not monitoring any ACKs. 
+enable us to also verify the transmission (NFR reliability), as we are not monitoring any ACKs. 
 
 The synthesis of measurement results will be integrated into the Datasheet, when completed. 
 
