@@ -9,7 +9,7 @@ waves with a determined frequency of 2-10 GHz with the power of under 20 dBm EIR
 This handheld device is capable of transmitting the waves to one selected direction. 
 The transmitter is a testing tool for the SAAB Sirius radar system and the final prototype 
 is compatible with Sirius. The transmitter is designed for rough Arctic environment, taking
-advantage of ESP32 low-duty cycle used to minimize the amount energy that the chip expends.
+advantage of ESP32 low-duty cycle used to minimize the amount of energy that the chip expends.
 
 
 
