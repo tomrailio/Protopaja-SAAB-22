@@ -3,7 +3,8 @@
 // The basic libraries will be installed already in the Arduino IDE, there may need not be any need to include
 // any additional libraries into the code. 
 
-#include <WiFi.h>                  This seems most relevant ATM, but this library was retired and is no longer maintained.
+// include <WiFi.h>                Simple Sine wave do not require this!
+                                   This library was retired and is no longer maintained.
                                    This library is compatible with all architectures so you should be able to use it on all the Arduino boards.   
                                    This library is automatically “installed” when you install the ESP32 add-on in your Arduino IDE.
 // #include <SPI.h>                This seems irrelevant ATM for our Use Case. 
@@ -20,8 +21,9 @@
  
 
 // TODO's below: 
-// Unlike TCP sockets connection between the server and its clients, or webSockets upon HTTP, we do not require ACK,
-   but we still need to have some sort of valid verification method.
+// Unlike TCP sockets connection between the server and its clients, or webSockets upon HTTP, we do not require ACK!,
+   but we still need to have some sort of valid verification method. The Spectrum Analyzer, oscillator and detector will
+   be applied where applicable, but not the VNA.
   
 void setup() {                     // This is pseudocode for the time being...
   Serial.begin(9600);              // initialize serial communication
