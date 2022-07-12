@@ -15,8 +15,18 @@ advantage of ESP32 low-duty cycle used to minimize the amount of energy that the
 XX. Element catalogue of the key components are listed next, in order to copy this project easily.  
 
 Microcontroller ATMEGA328P-PU.
-
-TBD: synthetisizer, antenna, regulators, 10 and 16 MHz crystals.
+micro-USB module FT232 FTDI
+Synthetisizer ADF4350BCPZ-RL7
+4x Regulator LP2992
+Crystal Oscillator 16.000 MHz
+Crystal Oscillator 10.000 MHz
+Amplifier [Yet unknown]
+Antenna [Yet unknown]'
+Battery [Not yet specified]
+amount==X Resistors of various sizes
+amount==X Capacitors of various sizes
+Red LED
+Green LED
 
 
 
