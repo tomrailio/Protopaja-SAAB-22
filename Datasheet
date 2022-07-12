@@ -12,8 +12,13 @@ is compatible with Sirius. The transmitter is designed for rough Arctic environm
 advantage of ESP32 low-duty cycle used to minimize the amount of energy that the chip expends.
 
 
-XX. Element catalogue of the key components (crystal, micro circuitry etc.). "uusi lukija
-osaa kopioida koko projektimme 100%". 
+XX. Element catalogue of the key components are listed next, in order to copy this project easily.  
+
+Microcontroller ATMEGA328P-PU.
+
+TBD: synthetisizer, antenna, regulators, 10 and 16 MHz crystals.
+
+
 
 XX. Functional Block Diagram
 
