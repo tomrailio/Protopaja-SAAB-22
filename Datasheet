@@ -30,17 +30,18 @@ Green LED
 
 
 
-XX. Functional Block Diagram
+XX. Functional Block Diagram (1 page is enough, export into the Drive). 
 
 XX. Pin Definitions (number) and Layout
 
 XX. Max Input 
 
-XX. Schematics
+XX. Schematics (1 page is enough, export into the Drive). 
 
-XX. PCB
+XX. PCB (1 page is enough, export into the Drive). 
 
-XX. Power Scheme Diagram
+XX. Power Scheme Diagram (1 page is enough, export into the Drive). 
+
 
 ESP32’s digital pins are divided into three different power domains:
 • VDD3P3_RTC
