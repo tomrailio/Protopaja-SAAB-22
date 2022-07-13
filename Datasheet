@@ -30,7 +30,10 @@ Green LED
 
 
 
-XX. Functional Block Diagram (1 page is enough, export into the Drive). 
+XX. Functional Block Diagram. 
+
+This has been done once now. The code is in VCS as HTML and the diagram can be downloaded as PNG. 
+
 
 XX. Pin Definitions (number) and Layout
 
