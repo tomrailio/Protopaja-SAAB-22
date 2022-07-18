@@ -1,0 +1,31 @@
+
+// Protopaja 2022
+// Group 4: SAAB Finland
+// Handheld Microwave Transmitter; "The Death Star"
+
+// Set up antenna controlling pin
+  int antennaPin = 25;
+// Set up pins to read if button is pressed
+  int buttonIn =  32;
+  int buttonOut = 35;
+  
+void setup() {
+  // Sets antennPin and buttonIn to send out signals
+  pinMode(antennaPin, OUTPUT);
+  pinMode(buttonIn, OUTPUT);
+  // Sets buttonOUt to receive signals
+  pinMode(buttonOut, INPUT);
+}
+
+void loop() {
+  // Power on the button
+  digitalWrite(buttonIn, HIGH);
+  
+  // If button is pressed, send turn on signal to the antenna pin
+  if (digitalRead(buttonOut)== 1) {
+    digitalWrite(antennaPin, HIGH);
+  }
+  // If button is not pressed, send turn off signal to antenna  pin
+  else digitalWrite(antennaPin, LOW);
+
+}
