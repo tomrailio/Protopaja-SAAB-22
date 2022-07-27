@@ -1,0 +1,27 @@
+// Protopaja 2022
+// Group 4: SAAB Finland
+// Handheld Microwave Transmitter; "The Death Star"
+
+#include <WiFi.h>
+
+///////please enter your sensitive data in the Secret tab/arduino_secrets.h
+char ssid[] = "aalto open";        // your network SSID (name)
+char pass[] = "";        // your network password (use for WPA, or use as key for WEP)
+int activePin = 25;
+int buttonState = 0;
+
+void setup() {
+  
+  pinMode(activePin, OUTPUT);
+  Serial.begin(9600);             //Initialize serial and wait for port to open:
+
+}
+
+void loop() {
+                               // check the network connection once every 15 seconds:
+ digitalWrite(activePin, HIGH);
+ buttonState = digitalRead(activePin);
+ if (buttonState == 1) {
+  WiFi.begin(ssid, pass);
+ }
+}
