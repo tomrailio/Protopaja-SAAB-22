@@ -1,7 +1,7 @@
 # Protocamp-22 / SAAB handheld microwave transmitter.
 Protopaja (Protocamp) is a 10 ECTS summerproject course in the University of Aalto to create 
 functional interactive prototypes based on briefs by partnering companies. 
-The School of Electrical Engineering is the onganizational unit and the 
+The School of Electrical Engineering is the organizational unit and the 
 Teachers in charge: Salu Ylirisku and Kimmo Silvonen (kimmo.silvonen@aalto.fi)
 
 SAAB recently developed the passive 'Sirius Compact' radar system for warfare. Now SAAB wants 
