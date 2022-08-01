@@ -1,5 +1,19 @@
-# Protopaja-22 / SAAB handheld microwave transmitter.
+# Protocamp-22 / SAAB handheld microwave transmitter.
+Protopaja (Protocamp) is a 10 ECTS project course to create functional interactive prototypes 
+based on briefs by partnering companies. Teachers in charge: Salu Ylirisku and 
+Kimmo Silvonen (kimmo.silvonen@aalto.fi)
 
+SAAB recently developed the passive 'Sirius Compact' radar system for warfare. Now SAAB wants 
+to develop a tool to test the limits and potential of the system. The Sirius Compact sensor 
+network has been developed specifically with Electronic Warfare (EW) in mind. Modular as 
+well as scalable, Sirius Compact's primary use case is seen as providing tactical-level 
+situational awareness for warfare from battlefields by generating electromagnetic activity 
+imaging with its sensors that detect electromagnetic radiation. In addition to this, Sirius 
+Compact is also capable of predicting, classifying and prioritising radar and data link 
+signals in the environment. SAAB needs a test tool for the radar system. The purpose of 
+this project work is to create the desired test tool. 
+
+ 
 Technical Specifications:
 
   * Power level < 20 dBm EIRP (antenna gain + output power).
