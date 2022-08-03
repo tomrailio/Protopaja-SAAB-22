@@ -28,34 +28,4 @@ amount==X Capacitors of various sizes
 Red LED
 Green LED
 
-
-
-XX. Functional Block Diagram. 
-
-This has been done once now. The code is in VCS as HTML and the diagram can be downloaded as PNG. 
-
-
-XX. Pin Definitions (number) and Layout
-
-XX. Max Input 
-
-XX. Schematics (1 page is enough, export into the Drive). 
-
-XX. PCB (1 page is enough, export into the Drive). 
-
-XX. Power Scheme Diagram (1 page is enough, export into the Drive). 
-
-
-ESP32’s digital pins are divided into three different power domains:
-• VDD3P3_RTC
-• VDD3P3_CPU
-• VDD_SDIO
-VDD3P3_RTC is also the input power supply for RTC and CPU.
-VDD3P3_CPU is also the input power supply for CPU.
-VDD_SDIO connects to the output of an internal LDO whose input is VDD3P3_RTC. 
-When VDD_SDIO is connected to the same PCB net together with VDD3P3_RTC, the internal 
-LDO is disabled automatically. The power scheme diagram is shown below:
-  
-- SDIO Domain
-- RTC Domain
-- CPU Domain
+ 
