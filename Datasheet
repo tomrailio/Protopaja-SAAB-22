@@ -2,7 +2,7 @@
 1. OVERVIEW 
 
 This document provides the specifications of SAAB microwave transmitter, which can transmit 
-waves with a determined frequency of 2-10 GHz with the power of under 20 dBm EIRP.
+waves with a determined frequency of 2.4 GHz with the power of under 20 dBm EIRP.
  
 1.1. Featured Solution
 
@@ -12,7 +12,7 @@ is compatible with Sirius. The transmitter is designed for rough Arctic environm
 advantage of ESP32 low-duty cycle used to minimize the amount of energy that the chip expends.
 
 
-XX. Element catalogue of the key components are listed next, in order to copy this project easily.  
+1.2. Element catalogue of the key components are listed next, in order to copy this project easily.  
 
 Microcontroller ATMEGA328P-PU.
 micro-USB module FT232 FTDI
@@ -22,7 +22,7 @@ Crystal Oscillator 16.000 MHz
 Crystal Oscillator 10.000 MHz
 Amplifier [Yet unknown]
 Antenna [Yet unknown]'
-Battery [Not yet specified]
+Battery 5v
 amount==X Resistors of various sizes
 amount==X Capacitors of various sizes
 Red LED
