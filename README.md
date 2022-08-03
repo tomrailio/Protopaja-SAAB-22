@@ -21,7 +21,7 @@ Technical Specifications:
 
   * Power level < 20 dBm EIRP (antenna gain + output power).
 
-  * Frequency has to be in between 2-10 GHz.
+  * Frequency is 2.4 GHz.
 
   * Waveform: Continuous wave (narrow bandwidth).
 
