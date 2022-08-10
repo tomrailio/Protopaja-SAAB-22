@@ -15,6 +15,16 @@ y2 = cos(x);
 figure
 plot(x,y1,x,y2)
 
+
+// More visual comparison of two sin waves:
+
+x = linspace(-2*pi,2*pi);
+y1 = sin(x);
+y2 = cos(x);
+p = plot(x,y1,x,y2);
+p(1).LineWidth = 2;
+p(2).Marker = '*';
+
 // Very visual comparison of 3 sin waves: 
 
 x = 0:pi/100:2*pi;
