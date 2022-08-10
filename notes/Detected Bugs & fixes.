@@ -2,4 +2,6 @@
 
 This file lists all the detected bugs we have found out during the development process and some solutions to fix them:
 
-1.)  Sine wave applied, no need for wifi library. 
+1.) Sine wave applied, no need for wifi library. 
+2.) No cone or carbonbased PLA near the antenna as distortortions might occur. 
+3.)  
