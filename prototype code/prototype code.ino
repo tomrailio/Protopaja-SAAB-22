@@ -2,9 +2,18 @@
 #define DATA_PIN 5
 #define CLK_PIN 6
 
-// Synthesizer register value, calculated with ADF4350 evaluation board software
+/* Synthesizer register value, calculated with ADF4350 evaluation board software
+   On RF Settings:
+       Output frequency: 2400 Mhz
+       Reference frequency: 10 Mhz
+       
+   On Register 4:
+       RF output power: -4dbm
+       
+   Leave all other fields unchanged
+*/
 #define REGISTER_5 0x580005U
-#define REGISTER_4 0x850034U
+#define REGISTER_4 0x850024U
 #define REGISTER_3 0x4B3U
 #define REGISTER_2 0x4E42U
 #define REGISTER_1 0x8008011U
