@@ -1,3 +1,10 @@
+NOTE!  This file is not the final script. We have made a collection of our key code, to illustrate the learning
+process behind the final script, which is in another file. As this public ProtoCamp project will be saved in this VCS
+for the future, you can browse through and see the logical steps we had to go through before making the final version.
+Should you be taking up somewhat similar (EW) projects in the future, feel free to read through our thoughts and hopefully
+save some time resources. 
+
+
 VERSION 1. BLINK test function. 
 
   Turns an LED on for one second, then off for one second, repeatedly. Altered delay 3000 ms for more visible 3 seconds. 
@@ -75,7 +82,7 @@ Version 3. BASIC script.
 
 ///////please enter your sensitive data in the Secret tab/arduino_secrets.h
 char ssid[] = "aalto open";        // your network SSID (name)
-char pass[] = "";        // your network password (use for WPA, or use as key for WEP)
+char pass[] = "";                  // your network password (use for WPA, or use as key for WEP)
 int activePin = 25;
 int buttonState = 0;
 
@@ -87,14 +94,11 @@ void setup() {
 }
 
 void loop() {
-                               // check the network connection once every 15 seconds:
+                                  // check the network connection once every 15 seconds:
  digitalWrite(activePin, HIGH);
  buttonState = digitalRead(activePin);
  if (buttonState == 1) {
   WiFi.begin(ssid, pass);
  }
 }
-
-
-
 
