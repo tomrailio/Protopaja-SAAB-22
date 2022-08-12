@@ -48,7 +48,7 @@ void setup_ports() {
 void write_register(unsigned long value) {
   digitalWrite(LE_PIN, LOW);
   delayMicroseconds(DELAY);
-  for (int i=31; i >= 0; i--) {
+  for (int i=31; i >= 0; i--) {                    
     if ((value >> i) & 1)
       digitalWrite(DATA_PIN, HIGH);
     else
