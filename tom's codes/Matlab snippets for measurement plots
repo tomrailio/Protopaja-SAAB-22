@@ -1,12 +1,12 @@
 
 
-// A simple sin wave: 
+// A simple sine wave: 
 
 x = 0:pi/100:2*pi;
 y = sin(x);
 plot(x,y)
 
-//  Comparison of two sin waves:
+//  Comparison of two sine waves:
 
 x = linspace(-2*pi,2*pi);
 y1 = sin(x);
@@ -16,7 +16,7 @@ figure
 plot(x,y1,x,y2)
 
 
-// More visual comparison of two sin waves:
+// More visual comparison of two sine waves:
 
 x = linspace(-2*pi,2*pi);
 y1 = sin(x);
@@ -25,7 +25,7 @@ p = plot(x,y1,x,y2);
 p(1).LineWidth = 2;
 p(2).Marker = '*';
 
-// Very visual comparison of 3 sin waves: 
+// Very visual comparison of 3 sine waves: 
 
 x = 0:pi/100:2*pi;
 y1 = sin(x);
@@ -35,7 +35,7 @@ y3 = sin(x-0.5);
 figure
 plot(x,y1,x,y2,'--',x,y3,':')
 
-//   Another very visual comparison of 3 sin waves: 
+//   Another very visual comparison of 3 sine waves: 
 
 x = 0:pi/10:2*pi;
 y1 = sin(x);
