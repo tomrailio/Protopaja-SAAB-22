@@ -1,6 +1,6 @@
 #define LE_PIN 4
-#define DATA_PIN 5
-#define CLK_PIN 6
+#define DATA_PIN 11
+#define CLK_PIN 13
 
 /* Synthesizer register value, calculated with ADF4350 evaluation board software
    On RF Settings:
