@@ -8,5 +8,6 @@ Components used for this circuit:
     - Microcontroler: Atmega328P DIP-28N with a suitable 16Mhz crystal oscillator
     - Regulator: onsemi / Fairchild MC78L05ACP (5V output)
     - Regulator: Texas Instruments LP2992AIM5-3.3/NOPB (3.3V output)
+    - Battery: LiPo battery with XT60 connector and voltage of 7.4V
 
 
