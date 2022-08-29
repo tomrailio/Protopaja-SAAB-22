@@ -16,7 +16,9 @@ this project work is to create the desired test tool.
 
 The software will be published under a very permissive MIT license. See the licence file 
 disclosed in this repository for further details.
- 
+
+# Schematics, PCB blueprint as well as part lists are located in Schematics folder
+
 Technical Specifications:
 
   * Power level < 20 dBm EIRP (antenna gain + output power).
@@ -36,5 +38,4 @@ Non-functional requirements:
 
   * Performance.
 
-  
   

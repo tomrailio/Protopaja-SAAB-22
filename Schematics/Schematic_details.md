@@ -1,4 +1,4 @@
-This folder contains KiCad schematics and PCB blueprint files for our circuit
+# This folder contains KiCad schematics and PCB blueprint files for our circuit
 
 Components used for this circuit:
     - Antenna: Linx Technology ANT-W63-WRT-UFL
